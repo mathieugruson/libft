@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:27:04 by mgruson           #+#    #+#             */
-/*   Updated: 2022/07/03 15:23:12 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/16 19:13:14 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,3 @@ int	ft_printf(const char *first_arg, ...)
 	va_end (args);
 	return (len);
 }
-
-int	main()
-{
-	ft_printf("%  d\n", -1);
-	printf("%  d", -1);
-
-	
-	// printf("%d\n", printf(" %u", 0));
-	// printf("\n\n");
-	// ft_printf("%d\n", ft_printf(" %u", 0));
-	
-	return 0;
-}	

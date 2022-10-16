@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:41:57 by mgruson           #+#    #+#             */
-/*   Updated: 2022/08/12 16:20:52 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/16 23:08:38 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	*get_work_line(int fd, char *work_line)
 		buf[buflen] = '\0';
 		if (buflen < ft_strlen(work_line) || buflen == 0)
 			buf[buflen] = '\0';
-		work_line = ft_strjoin(work_line, buf);
+		work_line = ft_strjoin_gnl(work_line, buf);
 	}
 	return (free(buf), work_line);
 }
@@ -122,25 +122,25 @@ char	*get_next_line(int fd)
 	return (print_line);
 }
 
-int main(void)
-{
-	int		fd;
-	char	*line;
+// int main(void)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	fd = 0;
-	fd = open("get_next_line.c", O_RDONLY);
-	line = get_next_line(fd);
-	printf(" 1 : %s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf(" 2 : %s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf(" 3 : %s", line);
-	free(line);
-	line = get_next_line(fd);
-	printf(" 3 : %s", line);
-	free(line);
-	close(fd);
-	return (0);
-} 
+// 	fd = 0;
+// 	fd = open("get_next_line.c", O_RDONLY);
+// 	line = get_next_line(fd);
+// 	printf(" 1 : %s", line);
+// 	free(line);
+// 	line = get_next_line(fd);
+// 	printf(" 2 : %s", line);
+// 	free(line);
+// 	line = get_next_line(fd);
+// 	printf(" 3 : %s", line);
+// 	free(line);
+// 	line = get_next_line(fd);
+// 	printf(" 3 : %s", line);
+// 	free(line);
+// 	close(fd);
+// 	return (0);
+// } 
