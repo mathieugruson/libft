@@ -15,4 +15,14 @@ libft : $(functions_o)
 clean :
 	rm libft $(functions_o)
 
-.PHONY : all clean
+fclean : clean
+	rm -f $(NAME)
+	rm -f $(BONUS)
+
+re : fclean
+	make all
+
+$(NAME):	$(functions_o)
+			ar rcs $(NAME) $(OBJ)
+
+.PHONY : all clean fclean re
