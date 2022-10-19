@@ -6,17 +6,17 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:41:54 by mgruson           #+#    #+#             */
-/*   Updated: 2022/05/23 23:41:21 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/17 10:46:48 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, int len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	save;
+	int	i;
+	int	j;
+	int	save;
 
 	i = 0;
 	j = 0;

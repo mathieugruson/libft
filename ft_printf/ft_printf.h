@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:09:22 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/16 22:56:56 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:27:32 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@
 # include <limits.h>
 # include <stdarg.h>
 
+# include "../libft_cursus/libft.h"
+
 int		ft_printf(const char *str, ...);
-int		ft_strlen(char *str);
 int		ft_nbrlen(long long n);
 int		ft_unslen(unsigned int n);
 int		ft_hexlen(unsigned long long n);
 int		ft_putnbr(int nb);
 void	ft_putuns(unsigned int nb);
-void	ft_putchar(char c);
-void	ft_putstr(char *str, int a);
 void	ft_putptr(unsigned long long n);
 void	ft_puthex_lowercase(unsigned int n);
 void	ft_puthex_uppercase(unsigned int n);

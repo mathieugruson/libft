@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_free_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 15:12:52 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/18 11:35:04 by mgruson          ###   ########.fr       */
+/*   Created: 2022/09/05 12:49:35 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/16 13:19:43 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+t_list	*ft_free_node(t_list *node)
 {
-	size_t	i;
+	t_list	*tmp;
 
-	i = 0;
-	if (!str)
-		return (i);
-	while (str[i] != '\0')
+	tmp = node;
+	if (node->next != NULL)
 	{
-		i++;
+		node = node->next;
+		free(tmp);
+		return (node);
 	}
-	return (i);
+	if (node->next == NULL)
+	{
+		free(node);
+		return (NULL);
+	}
+	return (node);
 }

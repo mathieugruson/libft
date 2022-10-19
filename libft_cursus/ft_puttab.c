@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_puttab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 11:01:38 by mathieug          #+#    #+#             */
-/*   Updated: 2022/05/31 16:04:58 by mgruson          ###   ########.fr       */
+/*   Created: 2022/10/17 15:15:51 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/18 15:54:37 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_puttab(char **tab)
 {
-	del((*lst).content);
-	free(lst);
+	int	i;
+
+	i = 0;
+	if (!tab)
+		return ;
+	while (tab[i])
+	{
+		ft_putstr(tab[i]);
+		i++;
+	}	
 }

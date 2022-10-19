@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putlst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 21:09:32 by mgruson           #+#    #+#             */
-/*   Updated: 2022/06/27 13:04:41 by mgruson          ###   ########.fr       */
+/*   Created: 2022/08/12 22:38:40 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/17 15:20:29 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putstr(char *str, int a)
+void	ft_print_list(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (i <= a - 1)
+	if (lst == NULL)
+		return ;
+	while (lst)
 	{
-		ft_putchar(str[i]);
-		i++;
-	}	
+		ft_putnode(lst);
+		lst = lst->next;
+	}
 }

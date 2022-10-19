@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 15:12:52 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/18 11:35:04 by mgruson          ###   ########.fr       */
+/*   Created: 2022/10/18 11:25:10 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/18 11:52:33 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
-{
-	size_t	i;
+int	ft_tablen(char **tab)
+{	
+	int	y;
 
-	i = 0;
-	if (!str)
-		return (i);
-	while (str[i] != '\0')
+	y = 0;
+	while (tab[y])
 	{
-		i++;
+		y++;
 	}
-	return (i);
+	return (y);
 }
+
+/*
+This function returns the line number of a table
+As tab[0] is the irst line of a table, y is the last line but not
+the protection
+*/

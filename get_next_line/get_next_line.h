@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 17:54:55 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/16 23:07:51 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:57:08 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stddef.h>
+# include "../libft_cursus/libft.h"
 
 char	*get_next_line(int fd);
 char	*get_work_line(int fd, char *line);
@@ -32,12 +33,12 @@ char	*get_print_line(char *src);
 char	*stock_end_line(char *work_line, char *print_line);
 char	*pull_end_line(char *work_line);
 
-int		ft_strlen(const char *s);
+int		ft_strlen_gnl(const char *s);
 char	*ft_strjoin_gnl(char *s1, char *s2);
-int		ft_memchr(char *s, int c, size_t n);
+int		ft_memchr_gnl(char *s, int c, size_t n);
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE		5
+#  define BUFFER_SIZE		5
 # endif
 
 #endif 

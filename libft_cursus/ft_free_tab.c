@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 11:08:29 by mathieug          #+#    #+#             */
-/*   Updated: 2022/06/01 15:28:40 by mgruson          ###   ########.fr       */
+/*   Created: 2022/10/18 11:18:35 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/18 15:51:59 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{	
-	while (lst)
+void	ft_free_tab(char **tab)
+{
+	int	tablen;
+	int	y;
+
+	tablen = ft_tablen(tab);
+	y = 0;
+	while (y < tablen)
 	{
-		f((*lst).content);
-		lst = (*lst).next;
-	}
+		free(tab[y]);
+		y++;
+	}	
+	free(tab);
 }

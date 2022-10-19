@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:41:57 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/16 23:08:38 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:48:34 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*pull_end_line(char *work_line)
 	i = 0;
 	if (work_line)
 	{
-		tmp = malloc(sizeof(char) * ((ft_strlen(work_line)) + 1));
+		tmp = malloc(sizeof(char) * ((ft_strlen_gnl(work_line)) + 1));
 		if (!tmp)
 			return (NULL);
 		while (work_line[i])
@@ -48,7 +48,7 @@ char	*stock_end_line(char *work_line, char *print_line)
 
 	j = 0;
 	tmp[BUFFER_SIZE] = '\0';
-	print_line_len = ft_strlen(print_line);
+	print_line_len = ft_strlen_gnl(print_line);
 	if (!work_line)
 		return (free(work_line), NULL);
 	while (work_line[print_line_len])
@@ -63,7 +63,7 @@ char	*get_print_line(char *src)
 	char	*tmp;
 	int		len;
 
-	len = ft_strlen(src);
+	len = ft_strlen_gnl(src);
 	i = 0;
 	if (!src || len == 0)
 		return (NULL);
@@ -95,13 +95,14 @@ char	*get_work_line(int fd, char *work_line)
 	{
 		return (NULL);
 	}
-	while (!ft_memchr(work_line, '\n', ft_strlen(work_line)) && buflen != 0)
+	while (!ft_memchr_gnl(work_line, '\n', ft_strlen_gnl(work_line))
+		&& buflen != 0)
 	{
 		buflen = read(fd, buf, (BUFFER_SIZE));
 		if (buflen == -1)
 			return (free(buf), NULL);
 		buf[buflen] = '\0';
-		if (buflen < ft_strlen(work_line) || buflen == 0)
+		if (buflen < ft_strlen_gnl(work_line) || buflen == 0)
 			buf[buflen] = '\0';
 		work_line = ft_strjoin_gnl(work_line, buf);
 	}
@@ -128,18 +129,14 @@ char	*get_next_line(int fd)
 // 	char	*line;
 
 // 	fd = 0;
-// 	fd = open("get_next_line.c", O_RDONLY);
-// 	line = get_next_line(fd);
-// 	printf(" 1 : %s", line);
-// 	free(line);
-// 	line = get_next_line(fd);
-// 	printf(" 2 : %s", line);
-// 	free(line);
-// 	line = get_next_line(fd);
-// 	printf(" 3 : %s", line);
-// 	free(line);
-// 	line = get_next_line(fd);
-// 	printf(" 3 : %s", line);
+// 	fd = open("map.ber", O_RDONLY);
+// 	line = "start";
+// 	while(line)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("%s", line);
+// 		free(line);
+// 	}
 // 	free(line);
 // 	close(fd);
 // 	return (0);
