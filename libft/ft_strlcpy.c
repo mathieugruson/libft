@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 11:20:09 by mgruson           #+#    #+#             */
-/*   Updated: 2022/05/18 13:37:56 by mgruson          ###   ########.fr       */
+/*   Created: 2022/05/09 09:32:17 by mgruson           #+#    #+#             */
+/*   Updated: 2022/10/30 20:32:44 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	unsigned int	i;
+	unsigned int	l;
+
+	l = ft_strlen(src);
+	i = 0;
+	if (size != 0)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	else if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	return (l);
 }
 
 /*
-int main()
-{
-    int nmb = 432;
-    ft_putnbr_fd(nmb, 1);
-    return (0);
-}*/
+
+Size represent 
+
+*/
