@@ -6,18 +6,20 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:14:57 by mgruson           #+#    #+#             */
-/*   Updated: 2022/11/17 13:15:38 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/11/17 13:21:22 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_puttripletab(char ***test)
+void	ft_puttripletab(char ***tripletab)
 {
 	int	i;
 
 	i = 0;
-	while (test[i])
+	if (!tripletab)
+		return ;
+	while (tripletab[i])
 	{
-		ft_putdoubletab(test[i]);
+		ft_putdoubletab(tripletab[i]);
 		i++;
 	}
 }
