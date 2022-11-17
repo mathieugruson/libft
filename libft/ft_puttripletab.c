@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_puttripletab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 15:15:51 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/18 15:54:37 by mgruson          ###   ########.fr       */
+/*   Created: 2022/11/17 13:14:57 by mgruson           #+#    #+#             */
+/*   Updated: 2022/11/17 13:15:38 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_puttab(char **tab)
+void	ft_puttripletab(char ***test)
 {
 	int	i;
 
 	i = 0;
-	if (!tab)
-		return ;
-	while (tab[i])
+	while (test[i])
 	{
-		ft_putstr(tab[i]);
+		ft_putdoubletab(test[i]);
 		i++;
-	}	
+	}
 }
