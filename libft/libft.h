@@ -6,7 +6,7 @@
 /*   By: mgruson <mgruson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:43:27 by mgruson           #+#    #+#             */
-/*   Updated: 2022/10/31 11:39:52 by mgruson          ###   ########.fr       */
+/*   Updated: 2022/11/17 13:44:09 by mgruson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	ft_free_list(t_list *lst);
 void	ft_putchar(char c);
 int		ft_putnbr(int nb);
 void	ft_putstr(char *s);
-void	ft_puttab(char **tab);
+void	ft_putdoubletab(char **doubletab);
+void	ft_puttripletab(char ***tripletab);
 void	ft_free_tab(char **tab);
 char	**ft_tabcpy(char **tab);
 int		ft_tablen(char **tab);
